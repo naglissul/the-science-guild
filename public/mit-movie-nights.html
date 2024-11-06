@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lecture Movie Nights - The Science Guild</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="mit-counter.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>The Science Guild</h1>
+    </header>
+    <main>
+      <section>
+        <h2>MIT Lecture Movie Nights</h2>
+        <p>
+          Join us for our regular lecture movie nights where we watch MIT open
+          courseware lectures with some popcorn and chill out. Choose a subject
+          from the list and vote!
+        </p>
+        <ul>
+          <li>
+            <a
+              href="https://www.youtube.com/playlist?list=PLUl4u3cNGP61-9PEhRognw5vryrSEVLPr"
+              >Quantum Physics I</a
+            >
+            <button onclick="incrementCounter('mit-1')">VOTE</button>
+            <div>
+              counter:
+              <div id="mit-1-count">...</div>
+            </div>
+          </li>
+          <li>
+            <a
+              href="https://www.youtube.com/playlist?list=PLUl4u3cNGP63LOmB3_O0xbgZVZibxj4rb"
+              >Chemistry (quantum, non-organic, kinetics)</a
+            >
+            <button onclick="incrementCounter('mit-2')">VOTE</button>
+            <div>
+              counter:
+              <div id="mit-2-count">...</div>
+            </div>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/playlist?list=PLB7540DEDD482705B"
+              >Mathematics for Computer Science</a
+            >
+            <button onclick="incrementCounter('mit-3')">VOTE</button>
+            <div>
+              counter:
+              <div id="mit-3-count">...</div>
+            </div>
+          </li>
+        </ul>
+        <h3>Upcoming Events</h3>
+        <ul>
+          <li>November 7, 18:30 - The first few lectures...</li>
+          <li>November 14, 18:30 - Continue...</li>
+        </ul>
+      </section>
+      <div class="contact-section">
+        <p>Join us!</p>
+        <p>
+          Join our Facebook group:
+          <a href="https://www.facebook.com/thescienceguild"
+            >The Science Guild</a
+          >
+        </p>
+        <p>or contact Naglis in any way...</p>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <p>&copy; 2024 Naglis Šuliokas</p>
+      <p>Contacts and more: <a href="https://www.npw.lt">npw.lt</a></p>
+    </footer>
+  </body>
+</html>
