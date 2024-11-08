@@ -1,5 +1,5 @@
 @base_url=letscountapi.com
-@namespace=the-science-guild-counter
+@namespace=the-science-guild-counteri
 
 @key=mit-3
 
@@ -28,3 +28,6 @@ Content-Type: application/json
 {
   "current_value": 0
 }
+
+### kj
+GET https://api.countapi.xyz/create?namespace=the-science-guild-counter&value=42
