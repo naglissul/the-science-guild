@@ -1,19 +1,14 @@
-const BASE_URL = "https://letscountapi.com";
-const NAMESPACE = "the-science-guild-counter2";
+const BASE_URL = "http://localhost:8080";
 
 async function getCounterValue(key) {
   try {
-    const response = await fetch(`${BASE_URL}/${NAMESPACE}/${key}`, {
+    const response = await fetch(`${BASE_URL}/${key}`, {
       method: "GET",
     });
     if (!response.ok) {
       throw new Error(`Error: ${response.status}`);
     }
     const data = await response.json();
-    if (data.exists === "false") {
-      initCounter(key);
-      return;
-    }
     if (key === "mit-1") {
       document.getElementById("mit-1-count").innerText = data.current_value;
     } else if (key === "mit-2") {
@@ -30,7 +25,7 @@ async function getCounterValue(key) {
 
 async function incrementCounter(key) {
   try {
-    const response = await fetch(`${BASE_URL}/${NAMESPACE}/${key}/increment`, {
+    const response = await fetch(`${BASE_URL}/${key}/increment`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -48,26 +43,6 @@ async function incrementCounter(key) {
       document.getElementById("mit-3-count").innerText = data.current_value;
     } else {
       console.error("invalid key");
-    }
-  } catch (error) {
-    console.error("Failed to increment counter:", error);
-  }
-}
-
-async function initCounter(key) {
-  try {
-    const response = await fetch(`${BASE_URL}/${NAMESPACE}/${key}`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    if (!response.ok) {
-      throw new Error(`Error: ${response.status}`);
-    }
-    const data = await response.json();
-    if (data.already_exists === "false") {
-      getCounterValue(key);
     }
   } catch (error) {
     console.error("Failed to increment counter:", error);
