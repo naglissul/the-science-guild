@@ -1,7 +1,7 @@
 @base_url=letscountapi.com
-@namespace=the-science-guild-counteri
+@namespace=the-science-guild-counter2
 
-@key=mit-3
+@key=mit-2
 
 ### Create Counter
 POST https://{{base_url}}/{{namespace}}/{{key}}

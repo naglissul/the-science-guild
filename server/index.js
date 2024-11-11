@@ -8,6 +8,12 @@ const BASE_URL = "https://letscountapi.com";
 const NAMESPACE = "the-science-guild-counter2";
 
 app.use(express.json());
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "*");
+  res.setHeader("Access-Control-Allow-Headers", "*");
+  next();
+});
 
 // Get counter value
 app.get("/:key", async (req, res) => {
